@@ -1,0 +1,73 @@
+<app-header></app-header>
+
+<ion-content>
+  <div id="sub-header">
+    <div class="contsub-header">
+      Puntos Obtenidos
+    </div>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>Periodo</ion-label>
+      <ion-select placeholder="Periodo" (ionChange)="buscar($event)">
+        <ion-select-option *ngFor="let pe of periodo" value="{{pe}}">{{pe}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-card *ngIf="totalPunto > -1 " 
+  style="width: 50%; text-align: center; margin: auto; margin-top: 20px; border-radius: 10px;">
+    <div style="margin-top: 10px;">
+    <ion-label style="margin-top: 10px;">Total de Puntos</ion-label>
+    <h1 >{{totalPunto}}</h1>
+  </div>
+  </ion-card> 
+
+<ion-card mode="md" *ngFor="let activida of actividades | filtro: textoBuscar: 'periodo'" >
+  <ion-card-header>
+    <ion-card-subtitle>{{activida.titulo}}</ion-card-subtitle>
+  </ion-card-header>
+
+  
+    <ion-card-content>
+      <ion-row mode="ios">
+        <ion-col size="4">
+          <ion-card class="items-puntos">
+            <ion-label class="item-title">Puntos</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <strong>{{activida.punto}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="items-mesi">
+            <ion-label class="item-title">Inicia</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <ion-label>{{activida.actividadI | date:'dd'}}</ion-label>
+                <strong>/{{activida.actividadI | date:'MM'}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="items-mesf">
+            <ion-label class="item-title">Finaliza</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <ion-label>{{activida.actividadF | date:'dd'}}</ion-label>
+                <strong>/{{activida.actividadF | date:'MM'}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

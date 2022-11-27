@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <div slot="end">
+      <div id="profile-photo">
+        <ion-avatar>
+          <img [src]="newUser.foto" alt="" class="Foto de usuario">
+        </ion-avatar>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="header">
+    <img src="assets/Aunar.png" alt="">
+  </div>
+  <div id="container-slides">
+    <ion-button fill="clear" (click)="revertToPreviousSlide()" [class.disabled]="disablePreviousSlideButton">
+      <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+
+    <ion-slides #slides (ionSlideWillChange)="runCheckForStateOfSlideshow()" pager="true" [options]="slideConfig">
+
+      <!-- Iterate through slideDeck array and create individual slides -->
+      <ion-slide *ngFor="let slide of slideDeck">
+        <img [src]="slide.image" />
+      </ion-slide>
+    </ion-slides>
+
+    <ion-button fill="clear" (click)="advanceToNextSlide()" [class.disabled]="disableNextSlideButton">
+      <ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <div id="footer">
+    <p>Bienestar academico</p>
+  </div>
+</ion-content>

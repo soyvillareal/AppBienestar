@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+ion-content {
+    ion-card {
+        ion-grid {
+            background: #fff;
+        }
+        width: 90%;
+        margin: auto;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    ion-button{
+        --background: #2e3191;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 15px;
+        border-radius: 4px;
+        margin: auto;
+        width: 100%;
+    }
+    ion-searchbar {
+        --background: #fff;
+        --border-radius: 4px;
+        width: 94%;
+        margin: auto;
+    }
+    ion-col {
+        margin: auto;
+    }
+
+    .content-photo img {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        margin: auto;
+    }
+    ion-label {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .content-info p {
+        font-size: 14px;
+        margin: 5px 0 0 0;
+    }
+}
+

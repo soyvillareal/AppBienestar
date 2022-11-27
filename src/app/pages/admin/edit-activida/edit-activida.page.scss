@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+#content-form {
+    padding: 15px;
+    background: #fff;
+    width: 90%;
+    border-radius: 12px;
+    margin: auto;
+    margin-top: 30px;
+
+    ion-input {
+        font-size: 16px;
+        margin: auto;
+        padding: 0 !important; 
+    }
+  
+      ion-item {
+        --background: #f3f3f3;
+        margin-top: 15px;
+        border-radius: 12px;
+        font-size: 14px;
+      }
+      ion-button:first-child{
+          margin-right: 15px;
+      }
+      ion-button{
+        --background: #2e3191;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 15px;
+        width: 90%;
+        height: 35px;
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    .content-fbuttons {
+        display: flex;
+        width: 100;
+    }
+        
+}

@@ -1,0 +1,28 @@
+
+<ion-content>
+  
+  <div id="header">
+      <img src="assets/Aunar.png" alt="aunar Villavicencio"/>
+  </div>
+
+  <form id="from">
+    <h1>Iniciar sesión</h1>
+    <ion-item lines="none">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input class="item-input" [(ngModel)]="newUser.email" type="text" name="email" placeholder="Correo"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-input class="item-input" [(ngModel)]="newUser.ndocumento" type="Password" name="Password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-button size="small" (click)="ingresar()" >Acceder</ion-button>
+    <p class="item-reset" routerLink="/reset-pass">¿Olvidaste tu contraseña?</p>
+  </form>
+
+  <ion-item id="content-regis" lines="none">
+    <p class="left-regis">¿Aún no tienes una cuenta?</p>
+    <p class="item-regis" routerLink="/nuevo-estudiante">Registrate</p>
+  </ion-item>
+</ion-content>

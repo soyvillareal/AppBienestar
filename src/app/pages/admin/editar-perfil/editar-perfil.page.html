@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<ion-content>
+  <div id="sub-header">
+    <div class="contsub-header">
+      Editar Perfil
+    </div>
+  </div>
+  
+  <div id="container-photo">
+    <label for="file-upload">
+      <div class="content-photo">
+        <img [src]="newUser.foto" alt="Foto de perfil">
+        <div class="content-icon-add">
+          <ion-icon class="icon-add-photo" slot="end" name="camera"></ion-icon>
+        </div>
+      </div>
+    </label>
+    <ion-item class="item-add-photo" lines="none">
+      <input (change)="imagePefil($event)" id="file-upload" style="display: none;" type="file" accept="image/*">
+    </ion-item>
+  </div>
+
+  <div style="padding-bottom: 30px; width: 60%; text-align: center; margin: auto;">
+    <strong>Correo</strong><br>
+    <ion-label color="secondary" style="--margin-top: 8px;">
+      {{newUser.email}}
+    </ion-label>
+  </div>
+
+  <ion-list id="content-form">
+    <ion-item lines="none">
+      <ion-label position="fixed">Nombres</ion-label>
+      <ion-input [(ngModel)]="newUser.nombres" type="text"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item lines="none">
+      <ion-label position="fixed">Apellidos</ion-label>
+      <ion-input [(ngModel)]="newUser.apellidos" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="fixed">Telefono</ion-label>
+      <ion-input [(ngModel)]="newUser.telefono" type="number"></ion-input>
+    </ion-item>
+
+    <div class="content-fbuttons">
+      <ion-button size="small" (click)="registrarse()">Actualizar</ion-button>
+    </div>
+  </ion-list>
+
+
+</ion-content>

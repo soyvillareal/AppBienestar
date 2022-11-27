@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<ion-content>
+  <div id="sub-header">
+    <div class="contsub-header">
+      Actualizar actividad
+    </div>
+  </div>
+
+  <ion-list id="content-form">
+    <ion-item lines="none">
+      <ion-label position="fixed">Titulo</ion-label>
+      <ion-input autocapitalize="words" [(ngModel)]="newActividad.titulo" type="text"
+        placeholder="Nombre de la actividad"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="fixed">Puntos</ion-label>
+      <ion-input [(ngModel)]="newActividad.punto" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="fixed">Periodo</ion-label>
+      <ion-input [(ngModel)]="newActividad.periodo" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="fixed">Inicio</ion-label>
+
+      <ion-datetime [(ngModel)]="newActividad.actividadI" displayFormat="DD/MMM/YYYY" placeholder="día/mes/año">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="fixed">Finalización</ion-label>
+      <ion-datetime [(ngModel)]="newActividad.actividadF" displayFormat="DD/MMM/YYYY" placeholder="día/mes/año">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label style="font-size: 20px;" position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="newActividad.descripcion" placeholder="Que se realizara en esta actividad....">
+      </ion-textarea>
+    </ion-item>
+
+    <div class="content-fbuttons">
+      <ion-button size="small" (click)="actualizarActividad()" color="success">Actualizar</ion-button>
+      <ion-button size="small" color="danger" routerLink="/ver-actividad">Cancelar</ion-button>
+    </div>
+  </ion-list>
+
+</ion-content>

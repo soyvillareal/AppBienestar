@@ -1,0 +1,6 @@
+{
+  "appId": "com.aunar.bienestaracademico",
+  "appName": "Bienestar Academico",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

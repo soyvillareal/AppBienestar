@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+
+<ion-content>
+  <div id="sub-header">
+    <div class="contsub-header">
+      Estudiantes
+    </div>
+  </div>
+
+  <ion-searchbar animated (ionChange)="buscar($event)" placeholder="Buscar"></ion-searchbar>
+<div *ngFor="let us of user | filtro: textoBuscar: 'nombres'" >
+  <ion-card *ngIf="us.rol === 'estudiante'" >
+    <ion-toolbar >
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" >
+            <div class="content-photo">
+              <img [src]="us.foto" alt="us.nombres">
+            </div>
+          </ion-col>
+
+          <ion-col size="4">
+            <ion-label>{{us.nombres}}</ion-label>
+            <div class="content-info">
+              <p>{{us.programa}}</p>
+              <p>{{us.email}}</p>
+            </div>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button   (click)="getEstudiante(us)" routerLink="/puntos-estudiante">
+              Ver puntos
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-card>
+</div>
+</ion-content>

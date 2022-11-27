@@ -1,0 +1,89 @@
+<app-header></app-header>
+
+<ion-content>
+<div id="sub-header">
+  <div class="contsub-header">
+    Puntos de Estudiante
+  </div>
+</div>
+
+  <ion-card>
+    <ion-row>
+      <ion-col class="contedor1" style="text-align: center;">
+        <div class="content-photo">
+          <img [src]="newUser.foto" alt="us.nombres">
+        </div>
+        <div class="contenedor">
+          <label>{{newUser.nombres}}</label><br>
+          <label>{{newUser.programa}}</label>
+
+        </div>
+      </ion-col>
+      <ion-col style="text-align: center;">
+        <p>Total de puntos</p>
+        <h1>{{totalPuntos}}</h1>
+        <p>Realizados</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+  
+  <div *ngFor="let activida of actividades">
+
+  <ion-card mode="md"  *ngIf="activida.estado === 'enviado'">
+    <ion-card-header>
+      <ion-card-subtitle>{{activida.titulo}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row mode="ios">
+        <ion-col size="4">
+          <ion-card class="items-puntos">
+            <ion-label class="item-title">Puntos</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <strong>{{activida.punto}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="items-mesi">
+            <ion-label class="item-title">Inicia</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <ion-label>{{activida.actividadI | date:'dd'}}</ion-label>
+                <strong>/{{activida.actividadI | date:'MM'}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="items-mesf">
+            <ion-label class="item-title">Finaliza</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <ion-label>{{activida.actividadF | date:'dd'}}</ion-label>
+                <strong>/{{activida.actividadF | date:'MM'}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <div class="content-fbuttons">
+        <ion-item style="margin:auto;">
+          <ion-label>Cambiar estado</ion-label>
+          <ion-select  (ionChange)="cabiarEstado(activida, $event.detail.value)" [value]="activida.estado" placeholder="Select Estado" interface="popover">
+            <ion-select-option *ngFor="let est of estadoact" [value]="est">{{est}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</div>
+
+</ion-content>

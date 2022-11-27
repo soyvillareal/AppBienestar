@@ -1,0 +1,54 @@
+
+
+
+<ion-menu side="start" menuId="PrimerMenu" contentId="main">
+  <ion-header class="ion-no-border" >
+    <ion-toolbar>
+      <div class="content-aside">
+          <img [src]="newUser.foto" alt="newUser.nombres" />
+          <div class="aside-names">
+            <strong>{{newUser.nombres}}</strong>
+          </div>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+  <ion-menu-toggle>
+    <ion-list lines="none">
+
+      <ion-item  lines="none" detail routerLink="/editar-perfil">
+        <ion-icon slot="start" name="person"></ion-icon>Editar perfil
+      </ion-item>
+      <ion-item detail routerLink="/nueva-actividad" *ngIf="admin">
+        <ion-icon slot="start" name="calendar-number-sharp"></ion-icon> Nueva actividad
+      </ion-item>
+
+      <ion-item detail routerLink="/ver-actividad" *ngIf="admin">
+        <ion-icon slot="start"name="calendar-sharp"></ion-icon> Ver actividades
+      </ion-item>
+      
+      <ion-item detail routerLink="/listado-estudiante"  *ngIf="admin">
+        <ion-icon slot="start"name="list"></ion-icon>Listar estudiantes
+      </ion-item>
+
+      <ion-item detail routerLink="/actividad" *ngIf="estudiante">
+        <ion-icon slot="start"name="calendar-sharp"></ion-icon> Actividades
+      </ion-item>
+
+      <ion-item detail routerLink="/puntos" *ngIf="estudiante">
+        <ion-icon slot="start" name="checkbox"></ion-icon>Puntos Obtenidos
+      </ion-item>
+      <ion-item   lines="none" (click)="salir()">
+        <ion-icon slot="start" name="log-out" (click)="salir()"></ion-icon>Cerrar sesión
+      </ion-item>
+    </ion-list>
+  </ion-menu-toggle>
+</ion-content>
+
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+
+
+
+

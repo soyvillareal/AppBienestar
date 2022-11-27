@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+
+<ion-content>
+  <div id="sub-header">
+    <div class="contsub-header">
+      {{newActividad.titulo}}
+    </div>
+  </div>
+
+  <ion-card mode="md">
+    <ion-card-content>
+      <ion-row mode="ios">
+        <ion-col size="4">
+          <ion-card class="items-puntos">
+            <ion-label class="item-title">Puntos</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <strong>{{newActividad.punto}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="items-mesi">
+            <ion-label class="item-title">Inicia</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <ion-label>{{newActividad.actividadI | date:'dd'}}</ion-label>
+                <strong>/{{newActividad.actividadI | date:'MM'}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-card class="items-mesf">
+            <ion-label class="item-title">Finaliza</ion-label>
+            <div class="content-mes">
+              <div class="cont-mes">
+                <ion-label>{{newActividad.actividadF | date:'dd'}}</ion-label>
+                <strong>/{{newActividad.actividadF | date:'MM'}}</strong>
+              </div>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-card-content class="content-description">
+        <p>{{newActividad.descripcion}}</p>
+      </ion-card-content>
+
+      <div class="content-button">
+        <ion-button mode="ios" (click)="addActi()">
+          Realizar
+        </ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

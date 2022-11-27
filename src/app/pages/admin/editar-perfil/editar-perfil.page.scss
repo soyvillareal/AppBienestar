@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+#container-photo {
+    position: relative;
+    margin-top: 25px;
+    .content-photo {
+        display: flex;
+        position: relative;
+        width: 170px;
+        height: 170px;
+        margin: auto;
+    }
+    .item-add-photo {
+        width: 100%;
+        color: #45a6d6;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .content-icon-add {
+        display: block;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+        top: 25%;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
+        border-radius: 50%;
+        width: 50%;
+        height: 50%;
+    }
+    .icon-add-photo {
+        position: absolute;
+        width: 49%;
+        height: 49%;
+        color: #fff;
+        left: 25%;
+        top: 25%;
+        bottom: 25%;
+        right: 25%;
+    }
+    img{
+        display: flex;
+        border-radius: 50%;
+        margin: auto;
+    }
+}
+
+#content-form {
+    padding: 15px;
+    background: #fff;
+    width: 90%;
+    border-radius: 12px;
+    margin: auto;
+
+    ion-input {
+        font-size: 16px;
+        margin: auto;
+        padding: 0 !important; 
+    }
+  
+      ion-item {
+        --background: #f3f3f3;
+        margin-top: 15px;
+        border-radius: 12px;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+      }
+  
+      ion-button {
+        --background: #2e3191;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 15px;
+        width: 90%;
+        height: 35px;
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    .content-fbuttons {
+        display: flex;
+        width: 100;
+    }
+        
+}

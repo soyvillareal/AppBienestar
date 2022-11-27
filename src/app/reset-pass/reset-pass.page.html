@@ -1,0 +1,18 @@
+<ion-content>
+  <div id="header">
+    <img src="assets/Aunar.png" alt="AUNAR Vilallicencio" />
+  </div>
+
+  <div id="from">
+    <h1>Recuperar contraseña</h1>
+    <ion-item lines="none">
+      <ion-input type="text" [(ngModel)]="email" placeholder="Introduce tu correo electronico"></ion-input>
+    </ion-item>
+    <ion-button class="env" size="small" (click)="resertLink()">Enviar correo electronico</ion-button>
+  </div>
+
+  <ion-item id="content-reset" lines="none">
+    <p class="left-reset">¿Ya estas registrado?</p>
+    <p class="item-reset" routerLink="/login">Acceder</p>
+  </ion-item>
+</ion-content>
